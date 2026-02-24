@@ -126,3 +126,125 @@ This setup ensures:
 - Structured commit history.
 - Reduced repository noise.
 - Improved team collaboration and maintainability.
+
+---
+
+---
+
+## Setup Instructions
+
+### Clone the repository
+
+Start by cloning the project and navigating into the project directory.
+
+```bash
+git clone <repository-url>
+cd movie-gallery
+```
+
+---
+
+### Install dependencies
+
+Install all project dependencies before starting development.
+
+```bash
+npm install
+```
+
+---
+
+### Node environment
+
+This project recommends using Node.js version 22 or higher.
+
+If you use **nvm**, run:
+
+```bash
+nvm install 22
+nvm use 22
+```
+
+---
+
+### Initialize git hooks
+
+If the Husky hooks are not already generated in your local environment, initialize them by running:
+
+```bash
+npm run prepare
+```
+
+This command registers the git hooks used by the project.
+
+You should see the `.husky/` directory containing:
+
+- pre-commit hook
+- commit-msg hook
+
+---
+
+### Verify tooling workflow
+
+To confirm the setup is working correctly:
+
+#### Linting and formatting
+
+Run:
+
+```bash
+npm run lint:fix
+```
+
+This will:
+
+- Automatically fix linting issues where possible.
+- Apply Prettier formatting.
+
+---
+
+#### Commit workflow validation
+
+Test the commit validation system by running:
+
+```bash
+git add .
+git commit -m "feat: test setup"
+```
+
+If the configuration is correct, the commit should be accepted or rejected according to Conventional Commits rules.
+
+---
+
+### Recommended development workflow
+
+During development:
+
+- Use format-on-save if working inside VSCode.
+- Let ESLint and Prettier handle code consistency.
+- Follow Conventional Commits format for all commits.
+
+---
+
+### Troubleshooting
+
+If git hooks are not executing:
+
+1. Ensure Husky is installed:
+
+```bash
+npm run prepare
+```
+
+2. Verify hook files exist inside `.husky/`.
+
+3. Make sure hooks are executable:
+
+```bash
+chmod +x .husky/pre-commit
+chmod +x .husky/commit-msg
+```
+
+4. Restart your terminal or IDE if hooks do not trigger.
+
+---
