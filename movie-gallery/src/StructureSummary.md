@@ -27,8 +27,29 @@ Contains **Custom React Hooks**. This extracts reusable stateful logic (e.g., `u
 ### 7. `lib/`
 Dedicated to **Infrastructure and Third-party configurations**. This is where you initialize database clients, Redis instances, or utility functions.
 
+#### JSDoc
+/**
+ * Fetches data from a specific resource endpoint.
+ * ***@param*** {string} id - The unique identifier for the resource.
+ * ***@returns*** {Promise<ApiResponse>} A promise that resolves to the formatted API response.
+ * ***@throws*** {Error} If the network request fails or returns a 5xx status.
+ 
+*/
+**export async function fetchData(id, options) { ... }**
+
 ### 8. `services/`
 The **Business Logic** layer. These functions handle communication with the **backend**.
+
+#### JSDoc
+/**
+ * Fetches data from a specific resource endpoint.
+ * ***@param*** {string} id - The unique identifier for the resource.
+ * ***@returns*** {Promise<ApiResponse>} A promise that resolves to the formatted API response.
+ * ***@throws*** {Error} If the network request fails or returns a 5xx status.
+ 
+*/
+**export async function fetchData(id, options) { ... }**
+
 
 ### 9. `types/`
 Centralizes all **TypeScript Definitions**. It stores interfaces and types used throughout the app, ensuring data consistency and a "single source of truth".
