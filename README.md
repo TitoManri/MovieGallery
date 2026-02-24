@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Development Setup
 
-## Getting Started
+### Requirements
 
-First, run the development server:
+- Node.js >= 22
+- npm
+
+It is recommended to use **nvm** to manage Node versions.
+
+If using nvm:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+nvm install 22
+nvm use 22
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Install dependencies
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### Editor configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project uses ESLint + Prettier auto-fixing.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Recommended extensions:
 
-## Deploy on Vercel
+- ESLint (Microsoft)
+- Prettier - Code formatter
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Workspace settings are provided in `.vscode/`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ensure the following is enabled in your editor:
+
+- Format on save
+- ESLint code actions on save
+
+---
+
+### Git hooks
+
+The repository enforces code quality and commit standards using Husky.
+
+#### Pre-commit hook
+
+Runs formatting and linting on staged files:
+
+- ESLint auto-fix
+- Prettier formatting
+
+#### Commit message validation
+
+Commit messages must follow **Conventional Commits** format.
+
+Example of a valid commit message:
+
+```
+feat: add movie card component
+```
+
+Allowed commit types:
+
+- feat
+- fix
+- chore
+- docs
+- refactor
+- test
+- build
+- ci
+- perf
+- revert
+
+Invalid commit messages will be rejected automatically.
+
+---
+
+### Commit workflow
+
+```bash
+git add .
+git commit -m "feat: description"
+```
+
+If formatting or linting issues are detected, the commit will fail.
+
+---
+
+### Environment recommendation
+
+- Use Node Version Manager (nvm) when working across multiple projects.
+- Keep Node version aligned with project requirements.
